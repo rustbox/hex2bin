@@ -1,0 +1,20 @@
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: make
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            hex2bin
+            mot2bin

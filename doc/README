@@ -31,8 +31,6 @@ when programming. The padding value can be changed with the -p option.
 
 1a. Compiling for Windows on Msys, Cygwin or DOS prompt
 
-	Versions already compiled for Windows are in bin/Release
-
 	The programs can be compiled as follows:
 	  gcc -O2 -Wall -o hex2bin.exe hex2bin.c common.c libcrc.c binary.c
 	  gcc -O2 -Wall -o mot2bin.exe mot2bin.c common.c libcrc.c binary.c

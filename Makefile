@@ -1,6 +1,6 @@
 # Makefile hex2bin/mot2bin
 
-CPFLAGS = -std=c99 -O2 -Wall -pedantic
+CPFLAGS = -std=c99 -O2 -Wall -pedantic -fcommon
 
 # Compile
 %.o : %.c

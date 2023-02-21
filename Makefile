@@ -18,7 +18,7 @@ MAN_DIR = $(INSTALL_DIR)/man/man1
 all: hex2bin mot2bin hex2bin.1
 
 hex2bin.1: hex2bin.pod
-	pod2man hex2bin.pod > hex2bin.1
+	pod2man -r "$(VERSION)" -c '' hex2bin.pod > hex2bin.1
 
 hex2bin: hex2bin.o common.o libcrc.o binary.o
 	gcc -O2 -Wall -o hex2bin hex2bin.o common.o libcrc.o binary.o
@@ -39,6 +39,7 @@ install:
 	strip mot2bin
 	cp hex2bin mot2bin $(INSTALL_DIR)/bin
 	cp hex2bin.1 $(MAN_DIR)
+	ln hex2bin.1 $(MAN_DIR)/mot2bin.1
 
 clean:
 	-rm core *.o hex2bin mot2bin

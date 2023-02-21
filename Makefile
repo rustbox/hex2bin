@@ -1,10 +1,11 @@
 # Makefile hex2bin/mot2bin
 
+VERSION ?= dev-$(shell git describe --always --dirty)
 CPFLAGS = -std=c99 -O2 -Wall -Werror -pedantic -fcommon
 
 # Compile
 %.o : %.c
-	gcc -c $(CPFLAGS) $< -o $@
+	gcc -c $(CPFLAGS) '-DVERSION="$(VERSION)"' $< -o $@
 
 #WIN64_GCC = x86_64-w64-mingw32-gcc
 WINDOWS = i686-w64-mingw32

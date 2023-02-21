@@ -55,7 +55,9 @@
 */
 
 #define PROGRAM "hex2bin"
-#define VERSION "2.5"
+#ifndef VERSION
+#define VERSION "dev-unknown"
+#endif
 
 #include "common.h"
 
@@ -92,7 +94,7 @@ int main (int argc, char *argv[])
 
     byte	Data_Str[MAX_LINE_SIZE];
 
-    fprintf (stdout,PROGRAM" v"VERSION", Copyright (C) 2017 Jacques Pelletier & contributors\n\n");
+    fprintf (stdout,PROGRAM" "VERSION", Copyright (C) 2017 Jacques Pelletier & contributors\n\n");
 
     if (argc == 1)
         usage();

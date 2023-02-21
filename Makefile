@@ -1,6 +1,6 @@
 # Makefile hex2bin/mot2bin
 
-CPFLAGS = -std=c99 -O2 -Wall -pedantic -fcommon
+CPFLAGS = -std=c99 -O2 -Wall -Werror -pedantic -fcommon
 
 # Compile
 %.o : %.c
@@ -40,4 +40,4 @@ install:
 	cp hex2bin.1 $(MAN_DIR)
 
 clean:
-	rm core *.o hex2bin mot2bin
+	-rm core *.o hex2bin mot2bin
